@@ -11,8 +11,18 @@
 
 ## Instruction 
 
+### Pre-train on free large dataset
+
 Because our Foveal Hypoplasia dataset is small, we need to borrow the power of a larger auxilary dataset. You must download [this dataset](https://data.mendeley.com/datasets/rscbjbr9sj/3) which contains about 100k images ([their paper](https://pubmed.ncbi.nlm.nih.gov/29474911/)).
 
-We trained our own EfficientNetB4 on these 100k images ([script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/5cffa3ea8694d25b89bde3dab07b04895cf0da65/Experiment/Scripts/train_100k_oct.sh)). 
+We trained our own EfficientNetB4 on these 100k images ([script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/5cffa3ea8694d25b89bde3dab07b04895cf0da65/Experiment/Scripts/train_100k_oct.sh), [already trained model]()). Please change the directory path according your own machine. 
+
+### Train on our foveal hypoplasia images
+
+There are three kinds of predictions made from the images and metadata: 
+1. Foveal Hypoplasia scores (continuous but can be treated as discrete from 1 to 4). 
+2. LogMAR (continuous value).
+3. Driving score (derived from LogMAR). 
+
 
 
