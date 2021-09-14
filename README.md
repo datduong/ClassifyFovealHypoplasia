@@ -25,6 +25,9 @@ There are three kinds of predictions made from the images and metadata:
 2. LogMAR (continuous value). [Train/test csv]().
 3. Driving score (derived from LogMAR). [Train/test csv]().
 
+### Scripts
+
+Scripts to train models are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts); for example, you can train [images to predict foveal hypoplasia score](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts/Img_FH_score)
 ### Example of training. 
 
 Because of our small data size, training finishes rather quickly and needs low GPU memory. 
