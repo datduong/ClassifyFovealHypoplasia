@@ -27,7 +27,7 @@ There are three kinds of predictions made from the images and metadata:
 
 ### Scripts
 
-Scripts to train models are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts); for example, you can train [images to predict foveal hypoplasia score](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts/Img_FH_score)
+Scripts to train models are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts); for example, you can train [images to predict foveal hypoplasia scores](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts/Img_FH_score).
 ### Example of training. 
 
 Because of our small data size, training finishes rather quickly and needs low GPU memory. 
