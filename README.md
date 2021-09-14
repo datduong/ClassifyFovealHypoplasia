@@ -2,7 +2,7 @@
 
 **Paper coming soon ...**
 
-**Data will be uploaded soon ...**
+**Data will be uploaded soon ...** [Structure of dataset folder](https://asciinema.org/a/435740)
 
 **Pre-trained models will be uploaded soon ...**
 
@@ -24,8 +24,6 @@ There are three kinds of predictions made from the images and metadata:
 1. Foveal Hypoplasia scores (continuous but can be treated as discrete from 1 to 4). [Train/test csv]().
 2. LogMAR (continuous value). [Train/test csv]().
 3. Driving score (derived from LogMAR). [Train/test csv]().
-
-### [Structure of dataset folder] (https://asciinema.org/a/435740)
 
 ### Example of training. 
 

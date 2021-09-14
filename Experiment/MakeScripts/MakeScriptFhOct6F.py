@@ -49,17 +49,15 @@ cd /data/duongdb/ClassifyEyeOct
 
 loaded_model=/data/duongdb/FH_OCT_08172021/Classify/Oct100kb4ns448Wl1ss10lr1e-05dp0.2b32ntest1/9c_b4ns_448_30ep_best_all_fold0.pth # ! load pre-trained from 100k oct
 
-# imagecsv=/data/duongdb/FH_OCT_08172021/FH_OCTs_label_train_input.csv # ! train input 
+imagecsv=/data/duongdb/FH_OCT_08172021/FH_OCTs_label_train_input.csv # ! train input 
 
-# python train.py --image-csv $imagecsv --kernel-type $kernel_type --image-size $imagesize --enet-type tf_efficientnet_b4_ns --use-amp --CUDA_VISIBLE_DEVICES 0 --model-dir $modeldir --log-dir $logdir --num-workers 4 --fold 'FOLD' --out-dim 4 --weighted-loss $weight --n-epochs 30 --batch-size $batchsize --init-lr $learningrate --scheduler-scaler $schedulerscaler --dropout $dropout --n-test $ntest --loaded-model $loaded_model
-
-# --label-upweigh LABELUP 
+python train.py --image-csv $imagecsv --kernel-type $kernel_type --image-size $imagesize --enet-type tf_efficientnet_b4_ns --use-amp --CUDA_VISIBLE_DEVICES 0 --model-dir $modeldir --log-dir $logdir --num-workers 4 --fold 'FOLD' --out-dim 4 --weighted-loss $weight --n-epochs 30 --batch-size $batchsize --init-lr $learningrate --scheduler-scaler $schedulerscaler --dropout $dropout --n-test $ntest --loaded-model $loaded_model
 
 # ! eval
 
 imagecsv=/data/duongdb/FH_OCT_08172021/FH_OCTs_label_test_input.csv # ! test input
 
-# python evaluate.py --image-csv $imagecsv --kernel-type $kernel_type --model-dir $modeldir --log-dir $logdir --image-size $imagesize --enet-type tf_efficientnet_b4_ns --oof-dir $oofdir --batch-size 32 --num-workers 4 --fold 'FOLD' --out-dim 4 --CUDA_VISIBLE_DEVICES 0 --dropout $dropout --do_test --n-test $ntest # ! actual test set
+python evaluate.py --image-csv $imagecsv --kernel-type $kernel_type --model-dir $modeldir --log-dir $logdir --image-size $imagesize --enet-type tf_efficientnet_b4_ns --oof-dir $oofdir --batch-size 32 --num-workers 4 --fold 'FOLD' --out-dim 4 --CUDA_VISIBLE_DEVICES 0 --dropout $dropout --do_test --n-test $ntest # ! actual test set
 
 # ! look at pixels
 
@@ -74,16 +72,12 @@ done
 path = '/data/duongdb/FH_OCT_08172021'
 os.chdir(path)
 
-
 SUFFIX = 'Img+6F'
-
 
 # LABELUP = '22q11DS,Controls,WS'
 
-
 METAFEAT = 'eye_position_od,eye_position_os,machine_type_z,machine_type_hb,age_taken,logMAR,spherical_equivalent,nystagmus,dAchromatopsia,dAniridia,dCHS,dErdheim Chester disease,dFH isolated,dHPS,dNanophthalmos,dOA,dOCA,dWaardenburg 2A,gCNGB3,gGPR143,gHPS1,gHPS5,gMITF,gOCA2,gPAX6,gPRSS56,gSLC45A2,gTYR,gunknown'
 METADIM = '128,128'
-
 
 counter=0
 for fold in [0,1,2,3,4]: 
@@ -111,7 +105,7 @@ for fold in [0,1,2,3,4]:
             time.sleep( 4 )
             # os.system('sbatch --partition=gpu --time=4:00:00 --gres=gpu:p100:1 --mem=8g --cpus-per-task=8 ' + scriptname )
             # os.system('sbatch --partition=gpu --time=00:10:00 --gres=gpu:p100:1 --mem=4g --cpus-per-task=4 ' + scriptname )
-            os.system('sbatch --time=24:00:00 --mem=12g --cpus-per-task=20 ' + scriptname )
+            # os.system('sbatch --time=24:00:00 --mem=12g --cpus-per-task=20 ' + scriptname )
             counter = counter + 1 
 
 #
