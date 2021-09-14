@@ -55,22 +55,19 @@ imagecsv=/data/duongdb/FH_OCT_08172021/train-FHGanSoftFFOLD$mix.csv # ! train in
 
 # python train.py --image-csv $imagecsv --kernel-type $kernel_type --image-size $imagesize --enet-type tf_efficientnet_b4_ns --use-amp --CUDA_VISIBLE_DEVICES 0 --model-dir $modeldir --log-dir $logdir --num-workers 4 --fold 'FOLD' --out-dim 4 --n-epochs 30 --batch-size $batchsize --init-lr $learningrate --scheduler-scaler $schedulerscaler --dropout $dropout --n-test $ntest --loaded-model $loaded_model --soft-label
 
-# --label-upweigh LABELUP --weighted-loss $weight 
-
 # ! eval
 
 imagecsv=/data/duongdb/FH_OCT_08172021/FH_OCTs_label_test_input_match_train_col_soft.csv # ! on real test set 
 
-# python evaluate.py --image-csv $imagecsv --kernel-type $kernel_type --model-dir $modeldir --log-dir $logdir --image-size $imagesize --enet-type tf_efficientnet_b4_ns --oof-dir $oofdir --batch-size 32 --num-workers 4 --fold 'FOLD' --out-dim 4 --CUDA_VISIBLE_DEVICES 0 --dropout $dropout --do_test --n-test $ntest --soft-label # ! actual test set
+python evaluate.py --image-csv $imagecsv --kernel-type $kernel_type --model-dir $modeldir --log-dir $logdir --image-size $imagesize --enet-type tf_efficientnet_b4_ns --oof-dir $oofdir --batch-size 32 --num-workers 4 --fold 'FOLD' --out-dim 4 --CUDA_VISIBLE_DEVICES 0 --dropout $dropout --do_test --n-test $ntest --soft-label # ! actual test set
 
 
 # ! look at pixels
 
-for condition in HB
+for condition in Z HB
 do
 python evaluate.py --image-csv $imagecsv --kernel-type $kernel_type --model-dir $modeldir --log-dir $logdir --image-size $imagesize --enet-type tf_efficientnet_b4_ns --oof-dir $oofdir --batch-size 1 --num-workers 8 --fold 'FOLD' --out-dim 4 --dropout $dropout --do_test --n-test $ntest --soft-label --attribution_keyword $condition --outlier_perc 2 --attribution_model Occlusion
 done
-
 
 """
 
@@ -107,10 +104,10 @@ for fold in [0,1,2,3,4]:
             fout.write(script2)
             fout.close()
             # 
-            time.sleep( 3 )
+            time.sleep( 1 )
             # os.system('sbatch --partition=gpu --time=6:00:00 --gres=gpu:p100:1 --mem=8g --cpus-per-task=8 ' + scriptname )
             # os.system('sbatch --partition=gpu --time=00:10:00 --gres=gpu:p100:1 --mem=4g --cpus-per-task=4 ' + scriptname )
-            os.system('sbatch --time=24:00:00 --mem=12g --cpus-per-task=20 ' + scriptname )
+            # os.system('sbatch --time=24:00:00 --mem=12g --cpus-per-task=20 ' + scriptname )
             counter = counter + 1 
 
 

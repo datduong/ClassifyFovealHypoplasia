@@ -33,7 +33,7 @@ Scripts to train models are [here](https://github.com/datduong/ClassifyFovealHyp
 
 ### Train classifier with generated images. 
 
-Please use [this GAN model]() to make fake images. Because fake images can only be trained from the real images, we will not be considering metadata. Scripts to train a classifier with fake images are also [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts)
+Please use [this GAN model]() to make fake images. Because fake images can only be trained from the real images, we will not be considering metadata. Scripts to train a classifier using both real and fake images are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts).
 
 ### Example of training. 
 
