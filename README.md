@@ -35,7 +35,7 @@ Scripts to train models are [here](https://github.com/datduong/ClassifyFovealHyp
 
 Please use [this GAN model]() to make fake images. Because fake images can only be trained from the real images, we will not be considering metadata. Scripts to train a classifier using both real and fake images are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts/Img_withfake_FH_score). Again, please change folder path according to your own machine. 
 
-We trained the classifier using both real images and fake images. The fake images were generated at the mix ratio of 90-to-10. For example, a fake image would have 90% characteristic of Foveal Hypoplasia score 1 and 10% characteristic of Foveal Hypoplasia score 2. We also tested the mix ratio 75-to-25, but did not see significant differences. 
+We trained the classifier using both real images and fake images. The fake images were generated at the mix ratio of 90-to-10. For example, a fake image would have 90% characteristic of Foveal Hypoplasia score 1 and 10% characteristic of Foveal Hypoplasia score 2. We also tested the mix ratio 75-to-25, but did not see significant differences. Because of mix ratio, we train using soft-labels (instead of a 1-hot encoding). 
 
 ### Example of training. 
 
