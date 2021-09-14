@@ -17,12 +17,22 @@ Because our Foveal Hypoplasia dataset is small, we need to borrow the power of a
 
 We trained our own EfficientNetB4 on these 100k images ([script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/5cffa3ea8694d25b89bde3dab07b04895cf0da65/Experiment/Scripts/train_100k_oct.sh), [already trained model]()). Please change the directory path according your own machine. 
 
+
 ### Train on our foveal hypoplasia images
 
 There are three kinds of predictions made from the images and metadata: 
-1. Foveal Hypoplasia scores (continuous but can be treated as discrete from 1 to 4). 
-2. LogMAR (continuous value).
-3. Driving score (derived from LogMAR). 
+1. Foveal Hypoplasia scores (continuous but can be treated as discrete from 1 to 4). [Train/test csv]().
+2. LogMAR (continuous value). [Train/test csv]().
+3. Driving score (derived from LogMAR). [Train/test csv]().
+
+### Structure of dataset folder. 
+
+[![asciicast](https://asciinema.org/a/435740.svg)](https://asciinema.org/a/435740)
+
+### Example of training. 
+
+Because of our small data size, training finishes rather quickly and needs low GPU memory. 
+
 
 
 
