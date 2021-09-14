@@ -25,9 +25,7 @@ There are three kinds of predictions made from the images and metadata:
 2. LogMAR (continuous value). [Train/test csv]().
 3. Driving score (derived from LogMAR). [Train/test csv]().
 
-### Structure of dataset folder. 
-
-[![asciicast](https://asciinema.org/a/435740.svg)](https://asciinema.org/a/435740)
+### [Structure of dataset folder] (https://asciinema.org/a/435740)
 
 ### Example of training. 
 
