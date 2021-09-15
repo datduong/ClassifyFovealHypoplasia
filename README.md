@@ -41,6 +41,6 @@ We trained the classifier using both real images and fake images. The fake image
 
 Because of our small data size, training finishes rather quickly and needs low GPU memory. 
 
-
+[![asciicast](https://asciinema.org/a/435777.svg)](https://asciinema.org/a/435777)
 
 
