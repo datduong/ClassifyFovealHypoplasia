@@ -27,11 +27,11 @@ There are three kinds of predictions made from the images and metadata:
 
 These csv inputs contain the labels (e.g. LogMAR) and metadata (e.g. age, nystagmus status, ...). In the column names, known diagnoses begin with the letter "d", and known genes begin with the letter "g".
 
-### Scripts
+### Train classifier with real images. 
 
-Scripts to train models are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts); for example, you can train [images to predict foveal hypoplasia scores](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts/Img_FH_score). We used 5-fold cross-validation, so there are 5 models which will later be combined to make a final ensemble classifier. 
+Scripts to train models are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts); for example, you can train [images to predict foveal hypoplasia scores](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts/Img_FH_score). We used 5-fold cross-validation, so there are 5 models which will later be combined to make a final ensemble classifier. Run [ensemble with this code](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/ensemble.sh). 
 
-### Train classifier with generated images. 
+### Train classifier with real and generated images. 
 
 Please use [this GAN model]() to make fake images. Because fake images can only be trained from the real images, we will not be considering metadata. Scripts to train a classifier using both real and fake images are [here](https://github.com/datduong/ClassifyFovealHypoplasia/tree/master/Experiment/Scripts/Img_withfake_FH_score). Again, please change folder path according to your own machine. 
 
