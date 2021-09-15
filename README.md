@@ -46,4 +46,4 @@ Because of our small data size, training finishes rather quickly and needs low G
 
 ### Compute accuracy. 
 
-There are many ways to compute a classifier's accuracy. Because 
+Because Foveal Hypoplasia (FH) scores can be view as continuous values, we use these two metrics: correlation and linear regression R<sup>2</sup>. Predictions aligning well with true FH scores will have both high correlation and linear regression R<sup>2</sup>. High correlation implies that a more severe case will have a higher FH score than a mild case. High linear regression R<sup>2</sup> indicates that predictions are close to the true values. 
