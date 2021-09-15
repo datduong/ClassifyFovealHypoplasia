@@ -8,6 +8,7 @@ conda activate py37
 
 cd /data/duongdb/ClassifyEyeOct # ! change to your own path
 
+# @modelname is the name of your trained models
 for modelname in b4ns448w1ss10lr1e-05dp0.2b32ntest1-Img+6F b4ns448w1ss10lr1e-05dp0.2b32ntest1-Img+6F+SoftM0.9T0.8
 do
   cd /data/duongdb/ClassifyEyeOct
