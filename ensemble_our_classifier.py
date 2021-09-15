@@ -7,11 +7,8 @@ import argparse
 import OtherMetrics
 
 def read_output(filename,args): 
-    # we need to worry only about our iamges
-    df = pd.read_csv(filename) # name,patient_id,sex,age_approx,anatom_site_general_challenge,label,benign_malignant,target,tfrecord,width,height,filepath,fold,is_ext,is_test,0,1,2,3,...
+    df = pd.read_csv(filename) 
     df = df.sort_values(by='name',ignore_index=True) # sort just to be consisent. 
-    # p = r'({})'.format('|'.join(map(re.escape, args.labels))) # https://stackoverflow.com/questions/11350770/select-by-partial-string-from-a-pandas-dataframe
-    # df = df[df['name'].str.contains(p)]
     df = df.reset_index()
     print ('\nread in {} dim {}'.format(filename,df.shape[0]))
     # print (df)
@@ -25,7 +22,6 @@ def rm_lt50_average(prediction_array,num_labels): # @prediction_array is [[model
         if max(array) > 0.2 : # skip if no prediction is over 0.5
             ave_array = ave_array + array 
             counter = counter + 1
-    #
     return ave_array/counter 
     
 
@@ -65,9 +61,9 @@ if __name__ == '__main__':
     
     # need to recode the truth and prob labels. 
     try: 
-        diagnosis2idx = {int(value):index for index,value in enumerate(args.labels)}
+        diagnosis2idx = {int(value):index for index,value in enumerate(args.labels)} # ! FH uses 1,2,3,4
     except: 
-        diagnosis2idx = {value:index for index,value in enumerate(args.labels)}
+        diagnosis2idx = {value:index for index,value in enumerate(args.labels)} # ! driving uses A,B,C
     
     print ('diagnosis2idx : ', diagnosis2idx)
     our_label_index = list ( np.arange(len(diagnosis2idx)) )
