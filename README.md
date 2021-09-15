@@ -22,7 +22,7 @@ We trained our own EfficientNetB4 on these 100k images ([script](https://github.
 
 There are three kinds of predictions made from the images and metadata: 
 1. Foveal Hypoplasia scores (continuous but can be treated as discrete from 1 to 4). [Train/test csv](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/TrainTestInputs/FH_OCTs_label_train_input.csv).
-2. LogMAR (continuous value). [Train/test csv](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/TrainTestInputs/FH_OCTs_label_train_input.csv) are same as above, we just use a different column in these csv.
+2. LogMAR (continuous value). [Train/test csv](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/TrainTestInputs/FH_OCTs_label_train_input.csv) are same as above, we just use the column "logMAR" as our label.
 3. Driving score (derived from LogMAR). [Train/test csv](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/TrainTestInputs/FH_OCTs_label_train_input_driving.csv).
 
 These csv inputs contain the labels (e.g. LogMAR) and metadata (e.g. age, nystagmus status, ...). In the column names, known diagnoses begin with the letter "d", and known genes begin with the letter "g".
