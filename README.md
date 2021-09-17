@@ -15,7 +15,7 @@
 
 Because our Foveal Hypoplasia dataset is small, we need to borrow the power of a larger auxilary dataset. You must download [this dataset](https://data.mendeley.com/datasets/rscbjbr9sj/3) which contains about 100k images ([their paper](https://pubmed.ncbi.nlm.nih.gov/29474911/)).
 
-We trained our own EfficientNetB4 on these 100k images ([script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/5cffa3ea8694d25b89bde3dab07b04895cf0da65/Experiment/Scripts/train_100k_oct.sh), [already trained model]()). Please change the directory path according your own machine. 
+We trained our own EfficientNetB4 on these 100k images ([script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/Experiment/Scripts/train_100k_oct.sh), [already trained model]()). Please change the directory path according your own machine. 
 
 
 ### Train on our foveal hypoplasia images
@@ -48,5 +48,5 @@ Because of our small data size, training finishes rather quickly and needs low G
 
 Because Foveal Hypoplasia (FH) scores can be viewed as continuous values, we use these two metrics: correlation and linear regression R<sup>2</sup>. Predictions aligning well with true FH scores will have high correlation and high linear regression R<sup>2</sup>. High correlation implies that a more severe case will have a higher FH score than a mild case. High linear regression R<sup>2</sup> indicates that predictions are close to the true values. 
 
-This [R script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/GetFinalCorrR2.R) computes correlation and linear regression R<sup>2</sup>. Please accordingly change your model names and folder paths. 
+This [R script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/GetFinalCorrR2.R) computes correlation and linear regression R<sup>2</sup>. Please accordingly [change your model names](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/GetFinalCorrR2.R#L8) and [folder paths](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/GetFinalCorrR2.R#L15). 
 
