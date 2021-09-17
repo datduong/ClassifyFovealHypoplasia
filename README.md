@@ -48,5 +48,5 @@ Because of our small data size, training finishes rather quickly and needs low G
 
 Because Foveal Hypoplasia (FH) scores can be viewed as continuous values, we use these two metrics: correlation and linear regression R<sup>2</sup>. Predictions aligning well with true FH scores will have high correlation and high linear regression R<sup>2</sup>. High correlation implies that a more severe case will have a higher FH score than a mild case. High linear regression R<sup>2</sup> indicates that predictions are close to the true values. 
 
-This [R script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/cd5aa355698d237ccf024f94b3e6ef4e22fcbb39/GetFinalCorrR2.R) computes correlation and linear regression R<sup>2</sup>. Please accordingly change your model names and folder paths. 
+This [R script](https://github.com/datduong/ClassifyFovealHypoplasia/blob/master/GetFinalCorrR2.R) computes correlation and linear regression R<sup>2</sup>. Please accordingly change your model names and folder paths. 
 
