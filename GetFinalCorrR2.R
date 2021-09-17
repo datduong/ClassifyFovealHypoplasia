@@ -12,7 +12,7 @@ for (model in mods) { # ! go over each model name
   cor_ = c() 
   r2 = c() 
 
-  df_ = read.csv(paste0('C:/Users/duongdb/Documents/FH_OCT_08172021/Classify/',model,'/final_prediction.csv')) # ! read in final prediction (change csv name if needed.)
+  df_ = read.csv(paste0('C:/Users/duongdb/Documents/FH_OCT_08172021/Classify/',model,'/final_prediction.csv')) # ! read in final prediction (change csv name if needed.) @final_prediction.csv is the ensemble model (must be created by ensemble.sh)
   cor_ = c(cor_,cor(df_$label, df_$average_score, method = c("spearman"))) # pearson spearman
   lmmod = lm(df_$label ~ df_$average_score) # linear regression R2
   r2 = c(r2, summary(lmmod)$r.squared)
