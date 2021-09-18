@@ -3,15 +3,6 @@ import os, numpy, PIL
 import re
 import numpy as np 
 from PIL import Image
-
-
-# ! because we use 5-fold cv. we can average attribution for each fold. 
-# https://stackoverflow.com/questions/17291455/how-to-get-an-average-picture-from-100-pictures-using-pil
-
-# Access all PNG files in directory
-# allfiles=os.listdir(os.getcwd())
-# imlist=[filename for filename in allfiles if  filename[-4:] in [".png",".PNG",".jpeg",".jpg"]]
-
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -22,6 +13,8 @@ parser.add_argument('--keyword', type=str, default='Sign')
 args = parser.parse_args()
     
 maindir = os.path.join(args.model_dir,'EvalDev')
+
+# ! because we use 5-fold cv. we can average attribution for each fold. 
 
 for level in ['_test_Occlusion2']: # _test_1 _test_10
 

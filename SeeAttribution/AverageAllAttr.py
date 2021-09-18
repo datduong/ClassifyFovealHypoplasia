@@ -3,13 +3,6 @@ import re
 import numpy as np 
 from PIL import Image
 import pandas as pd 
-
-# ! because we use 5-fold cv. we can average attribution for each fold. 
-# https://stackoverflow.com/questions/17291455/how-to-get-an-average-picture-from-100-pictures-using-pil
-# Access all PNG files in directory
-# allfiles=os.listdir(os.getcwd())
-# imlist=[filename for filename in allfiles if  filename[-4:] in [".png",".PNG",".jpeg",".jpg"]]
-
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -19,10 +12,10 @@ parser.add_argument('--keyword', type=str, default=None) #
 parser.add_argument('--label_file', type=str, help='oct image name does not have label... should have added labels to names')
 
 args = parser.parse_args()
-    
+
 os.chdir(args.image_path)
 
-label_file = pd.read_csv(args.label_file)
+label_file = pd.read_csv(args.label_file) # ! because we use 5-fold cv. we can average attribution for each fold. 
 temp_ = list(label_file['name'])
 temp_ = [re.sub(r'(\.jpg|\.jpeg)','',i) for i in temp_]
 label_of_image = dict(zip(temp_, list(label_file['label'])))
