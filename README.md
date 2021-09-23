@@ -2,7 +2,7 @@
 
 **Paper coming soon ...**
 
-**Data will be uploaded soon ...** [structure of dataset folder](https://asciinema.org/a/435740).
+**Data will be uploaded soon ...** [how your dataset folder should look](https://asciinema.org/a/435740).
 
 **Pre-trained models will be uploaded soon ...**
 
