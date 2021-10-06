@@ -1,4 +1,4 @@
-## Foveal Hypoplasia
+## Predicting Foveal Hypoplasia scores ([and generating Foveal Hypoplasia images](https://github.com/datduong/stylegan2-ada-FovealHypoplasia))
 
 **Paper coming soon ...**
 
@@ -6,7 +6,7 @@
 
 **Pre-trained models will be uploaded soon ...**
 
-**[What is Foveal Hypoplasia?](https://en.wikipedia.org/wiki/Macular_hypoplasia)**
+**[What are Foveal Hypoplasia scores?](https://en.wikipedia.org/wiki/Macular_hypoplasia)**
 
 
 ## Instruction 
