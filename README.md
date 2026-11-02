@@ -1,8 +1,5 @@
 ## Predicting Foveal Hypoplasia scores ([and generating Foveal Hypoplasia images](https://github.com/datduong/stylegan2-ada-FovealHypoplasia))
 
-hi mariya 
-
-
 **Paper coming soon ...**
 
 **Data will be uploaded soon ...** [how your dataset folder should look](https://asciinema.org/a/435740).
